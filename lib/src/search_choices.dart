@@ -1274,7 +1274,7 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
                           }
                         : null,
                     child: Container(
-                      padding: padding.resolve(Directionality.of(context)),
+                      padding: EdgeInsets.all(5),
                       child: Row(
                         textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
