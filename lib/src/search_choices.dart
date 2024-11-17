@@ -1245,13 +1245,13 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
               textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
               children: <Widget>[
                 widget.isExpanded ? Expanded(child: innerItemsWidget) : innerItemsWidget,
-                // IconTheme(
-                //   data: IconThemeData(
-                //     color: _iconColor,
-                //     size: widget.iconSize,
-                //   ),
-                //   child: prepareWidget(widget.icon, parameter: selectedResult) ?? SizedBox.shrink(),
-                // ),
+                IconTheme(
+                  data: IconThemeData(
+                    color: _iconColor,
+                    size: widget.iconSize,
+                  ),
+                  child: prepareWidget(widget.icon, parameter: selectedResult) ?? SizedBox.shrink(),
+                ),
               ],
             ));
 
