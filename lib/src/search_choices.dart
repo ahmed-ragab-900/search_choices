@@ -1265,32 +1265,32 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             widget.isExpanded ? Expanded(child: clickable ?? SizedBox.shrink()) : clickable ?? SizedBox.shrink(),
-            // !widget.displayClearIcon
-            //     ? SizedBox.shrink()
-            //     : InkWell(
-            //         onTap: hasSelection && _enabled && !widget.readOnly
-            //             ? () {
-            //                 clearSelection();
-            //               }
-            //             : null,
-            //         child: Container(
-            //           padding: EdgeInsets.zero, //padding.resolve(Directionality.of(context)),
-            //           child: Row(
-            //             textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
-            //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //             mainAxisSize: MainAxisSize.min,
-            //             children: <Widget>[
-            //               IconTheme(
-            //                 data: IconThemeData(
-            //                   color: hasSelection && _enabled && !widget.readOnly ? _enabledIconColor : _disabledIconColor,
-            //                   size: widget.iconSize,
-            //                 ),
-            //                 child: widget.clearIcon,
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ),
+            !widget.displayClearIcon
+                ? SizedBox.shrink()
+                : InkWell(
+                    onTap: hasSelection && _enabled && !widget.readOnly
+                        ? () {
+                            clearSelection();
+                          }
+                        : null,
+                    child: Container(
+                      padding: EdgeInsets.zero, //padding.resolve(Directionality.of(context)),
+                      child: Row(
+                        textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          IconTheme(
+                            data: IconThemeData(
+                              color: hasSelection && _enabled && !widget.readOnly ? _enabledIconColor : _disabledIconColor,
+                              size: widget.iconSize,
+                            ),
+                            child: widget.clearIcon,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),
