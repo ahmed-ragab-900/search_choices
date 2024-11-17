@@ -1242,7 +1242,7 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
                     await showDialogOrMenu("", closeMenu: !widget.dialogBox && displayMenu.value);
                   },
             child: Row(
-              textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
+              textDirection: rightToLeft ? TextDirection.ltr : TextDirection.ltr,
               children: <Widget>[
                 widget.isExpanded ? Expanded(child: innerItemsWidget) : innerItemsWidget,
                 IconTheme(
@@ -1264,7 +1264,9 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            widget.isExpanded ? Expanded(child: clickable ?? SizedBox.shrink()) : clickable ?? SizedBox.shrink(),
+            widget.isExpanded
+                ? Expanded(child: ColoredBox(color: Colors.green, child: clickable ?? SizedBox.shrink()))
+                : clickable ?? SizedBox.shrink(),
             !widget.displayClearIcon
                 ? SizedBox()
                 : InkWell(
