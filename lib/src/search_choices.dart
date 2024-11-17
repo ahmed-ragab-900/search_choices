@@ -1242,7 +1242,7 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
                     await showDialogOrMenu("", closeMenu: !widget.dialogBox && displayMenu.value);
                   },
             child: Row(
-              textDirection: rightToLeft ? TextDirection.ltr : TextDirection.ltr,
+              textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
               children: <Widget>[
                 widget.isExpanded ? Expanded(child: innerItemsWidget) : innerItemsWidget,
                 IconTheme(
@@ -1258,17 +1258,15 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
     DefaultTextStyle result = DefaultTextStyle(
       style: _textStyle,
       child: Container(
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.zero, // padding.resolve(Directionality.of(context)),
         child: Row(
-          textDirection: rightToLeft ? TextDirection.ltr : TextDirection.ltr,
+          textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            widget.isExpanded
-                ? Expanded(child: ColoredBox(color: Colors.green, child: clickable ?? SizedBox.shrink()))
-                : clickable ?? SizedBox.shrink(),
+            widget.isExpanded ? Expanded(child: clickable ?? SizedBox.shrink()) : clickable ?? SizedBox.shrink(),
             !widget.displayClearIcon
-                ? SizedBox()
+                ? SizedBox.shrink()
                 : InkWell(
                     onTap: hasSelection && _enabled && !widget.readOnly
                         ? () {
@@ -1276,7 +1274,7 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
                           }
                         : null,
                     child: Container(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.zero, //padding.resolve(Directionality.of(context)),
                       child: Row(
                         textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
