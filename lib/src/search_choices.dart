@@ -1260,7 +1260,7 @@ class _SearchChoicesState<T> extends FormFieldState<T> {
       child: Container(
         padding: EdgeInsets.all(5),
         child: Row(
-          textDirection: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
+          textDirection: rightToLeft ? TextDirection.ltr : TextDirection.ltr,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
